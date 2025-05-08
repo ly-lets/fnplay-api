@@ -18,7 +18,6 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// Use authentication routes
 app.use(PREFIX,authenticate);
 app.use(PREFIX,heartbeat);
 app.use(PREFIX,games);

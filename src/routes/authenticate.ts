@@ -11,16 +11,9 @@ declare module 'express-session' {
 
 const router: Router = express.Router();
 
-// In-memory user database (for demonstration purposes)
-// const users: { [key: string]: string } = {
-//     'user1': 'password1'
-// };
 
 router.post('/v1/login', (req: Request, res: Response) => {
     const { username, password } = req.body as { username: keyof typeof users; password: string };
-    console.log('Received login request:');
-    console.log('Username:', username);
-    console.log('Password:', password);
 
     if (users[username] === password) {
         req.session.user = username;
